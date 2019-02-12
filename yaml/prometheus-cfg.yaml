@@ -18,9 +18,9 @@ data:
         static_configs:
           - targets: ['localhost:9090']
       - job_name: "remo"
-        scrape_interval: 5s
+        scrape_interval: 60s
         dns_sd_configs:
-          - names: ['remo.remo-exporter']
+          - names: ['remo-exporter.remo']
             port: 9352
             type: A
             refresh_interval: 5s
