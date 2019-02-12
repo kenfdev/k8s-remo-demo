@@ -10,8 +10,6 @@ data:
     global:
       scrape_interval:     15s
       evaluation_interval: 15s
-      external_labels:
-          monitor: 'faas-monitor'
     # rule_files:
     #     - 'alert.rules.yml'
     scrape_configs:
@@ -22,8 +20,8 @@ data:
       - job_name: "remo"
         scrape_interval: 5s
         dns_sd_configs:
-          - names: ['remo.remo']
-            port: 8080
+          - names: ['remo.remo-exporter']
+            port: 9352
             type: A
             refresh_interval: 5s
     # alerting:
